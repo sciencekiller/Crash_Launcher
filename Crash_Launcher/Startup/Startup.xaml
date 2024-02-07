@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<winuiex:WindowEx
+    x:Class="Crash_Launcher.Startup.Startup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:winuiex="using:WinUIEx"
+    xmlns:local="using:Crash_Launcher.Startup"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="1024"
+    Height="768"
+    mc:Ignorable="d">
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="SettingFrame" Grid.Row="0"/>
+        <Grid Grid.Row="1">
+            <HyperlinkButton x:Name="BackButton" HorizontalAlignment="Left" Margin="10,0,0,5" VerticalAlignment="Center" Click="BackButton_Click" Visibility="Collapsed">
+                <HyperlinkButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72B;" Margin="0,0,10,0"/>
+                        <TextBlock x:Uid="/Startup/Back" Margin="15,0,0,0"/>
+                    </StackPanel>
+                </HyperlinkButton.Content>
+            </HyperlinkButton>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <ProgressBar x:Name="SettingProgress" IsIndeterminate="True" HorizontalAlignment="Center" Width="300" VerticalAlignment="Center"/>
+                <TextBlock x:Name="ProgressDetail" FontSize="12"/>
+            </StackPanel>
+            <HyperlinkButton x:Name="NextButton" HorizontalAlignment="Right" Margin="0,0,10,5" VerticalAlignment="Center" Click="NextButton_Click">
+                <HyperlinkButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Uid="/Startup/Next" Margin="0,0,10,0"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72A;" Margin="15,0,0,0"/>
+                    </StackPanel>
+                </HyperlinkButton.Content>
+            </HyperlinkButton>
+            <HyperlinkButton x:Name="FinishButton" HorizontalAlignment="Right" Margin="0,0,10,5" VerticalAlignment="Center" Click="FinishButton_Click"  Visibility="Collapsed">
+                <HyperlinkButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Uid="/Startup/Finish" Margin="0,0,10,0"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE73E;" Margin="15,0,0,0"/>
+                    </StackPanel>
+                </HyperlinkButton.Content>
+            </HyperlinkButton>
+        </Grid>
+    </Grid>
+</winuiex:WindowEx>
